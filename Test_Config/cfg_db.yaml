@@ -1,0 +1,19 @@
+# 本文件放置数据库链接信息
+BASE_URL: http://httpbin.org
+PITHY_DB: sqlite:///pithy.db
+
+rddz_db:
+    host: 10.0.1.237
+    user: rddz
+    password: re.dz@2019
+    port: 3306
+    database: kanduoduo
+    charset: utf8
+
+
+
+
+
+
+
+

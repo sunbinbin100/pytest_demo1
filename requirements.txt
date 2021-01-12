@@ -1,0 +1,29 @@
+# python3 -m pip install -r <file>    -r：一次安装多个模块
+redis
+records
+pithy
+pithy-test
+pytest
+requests
+pymysql
+# Mysqlclient
+allure-pytest
+pytest-html
+SQLAlchemy
+xlrd
+xlwt
+# pithy --extra-index-url http://pypi.dev.elenet.me/eleme/eleme --trusted-host pypi.dev.elenet.me
+
+
+
+# 生成报告命令：pytest -s -q --alluredir report
+# allure generate --clean report -o report/html
+# pytest自带的报告：
+# pytest --html=report.html --self-contained-html
+
+
+
+
+
+
+

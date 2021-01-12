@@ -1,0 +1,39 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
+  "children" : [ {
+    "name" : "sunbinbindembp",
+    "children" : [ {
+      "name" : "29862-MainThread",
+      "children" : [ {
+        "name" : "test_djh_login[userinfo0]",
+        "uid" : "416f602c2d25d2fa",
+        "parentUid" : "6ca0768b91c8b09d033b0c157786f42e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1610467062141,
+          "stop" : 1610467062416,
+          "duration" : 275
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "(15221466224, 123456)" ]
+      }, {
+        "name" : "test_djh_personal_center",
+        "uid" : "374f9df33ce5b672",
+        "parentUid" : "6ca0768b91c8b09d033b0c157786f42e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1610467062419,
+          "stop" : 1610467062731,
+          "duration" : 312
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "6ca0768b91c8b09d033b0c157786f42e"
+    } ],
+    "uid" : "0ce163d5e831049164a7326fcb9ebf03"
+  } ]
+}

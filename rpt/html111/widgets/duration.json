@@ -1,0 +1,21 @@
+[ {
+  "uid" : "416f602c2d25d2fa",
+  "name" : "test_djh_login[userinfo0]",
+  "time" : {
+    "start" : 1610467062141,
+    "stop" : 1610467062416,
+    "duration" : 275
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "374f9df33ce5b672",
+  "name" : "test_djh_personal_center",
+  "time" : {
+    "start" : 1610467062419,
+    "stop" : 1610467062731,
+    "duration" : 312
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]

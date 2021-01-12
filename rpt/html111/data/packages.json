@@ -1,0 +1,35 @@
+{
+  "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+  "name" : "packages",
+  "children" : [ {
+    "name" : "test_suites.test_djh",
+    "children" : [ {
+      "name" : "test_djh_login[userinfo0]",
+      "uid" : "416f602c2d25d2fa",
+      "parentUid" : "da76fd5eebc0b61e83f41d11b0a802f0",
+      "status" : "passed",
+      "time" : {
+        "start" : 1610467062141,
+        "stop" : 1610467062416,
+        "duration" : 275
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "(15221466224, 123456)" ]
+    }, {
+      "name" : "test_djh_personal_center",
+      "uid" : "374f9df33ce5b672",
+      "parentUid" : "da76fd5eebc0b61e83f41d11b0a802f0",
+      "status" : "passed",
+      "time" : {
+        "start" : 1610467062419,
+        "stop" : 1610467062731,
+        "duration" : 312
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "test_suites.test_djh"
+  } ]
+}

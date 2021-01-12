@@ -1,6 +1,3 @@
-# pytest_demo1
-pytest+pithy+allure接口自动化项目
-
 .
 ├── apis
 ├── rpt
@@ -35,3 +32,8 @@ pytest+pithy+allure接口自动化项目
 # env_url —— 接口url信息
 # env.cfg —— 环境配置，用于切换环境
 # config.py —— 配置驱动脚本（暂未添加）
+
+
+
+
+
