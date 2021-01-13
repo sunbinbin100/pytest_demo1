@@ -46,7 +46,6 @@ class TestDJHLogin(object):
         allure.attach('allure.attach测试文本text222222', name='text文本', attachment_type=allure.attachment_type.TEXT)
 
 
-
 # if __name__ == '__main__':
 #     pytest.main(['test_djh.py'])
 
