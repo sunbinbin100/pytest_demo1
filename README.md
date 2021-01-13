@@ -26,7 +26,7 @@
 &emsp;&emsp;&emsp;&emsp;&emsp;[pithy-test用户手册](https://pithy-test.readthedocs.io/en/latest/index.html)
 * pithy调用requests更加简洁，在调用时还能够打印出输入和输出的参数，方便调试
 * thriftpy文件有缺失，需要用的话需要去找一下
-
+---
 * cfg.yaml —— appid的配置信息
 * cfg_db.yaml —— 数据库连接信息
 * env_url —— 接口url信息
