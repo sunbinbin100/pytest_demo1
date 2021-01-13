@@ -3,24 +3,24 @@
     ├── apis
     ├── rpt
     │   ├── html111
-│   └── xml111
-├── Test_Config
-│   ├── __init__.py
-│   ├── cfg_db.yaml
-│   └── db_uat
-│       ├── __init__.py
-│       ├── operate_pymysql.py
-│       ├── operate_records.py
-│       └── redis_client.py
-├── test_suites
-├── Utils
-│   ├── __init__.py
-│   ├── Logging.py
-│   ├── getCookies.py
-│   └── md5_enc.py
-├── env.cfg
-├── README.MD
-└── requirements.txt
+    │   └── xml111
+    ├── Test_Config
+    │   ├── __init__.py
+    │   ├── cfg_db.yaml
+    │   └── db_uat
+    │       ├── __init__.py
+    │       ├── operate_pymysql.py
+    │       ├── operate_records.py
+    │       └── redis_client.py
+    ├── test_suites
+    ├── Utils
+    │   ├── __init__.py
+    │   ├── Logging.py
+    │   ├── getCookies.py
+    │   └── md5_enc.py
+    ├── env.cfg
+    ├── README.MD
+    └── requirements.txt
 
 
 # pithy调用requests更加简洁，在调用时还能够打印出输入和输出的参数，方便调试
