@@ -6,7 +6,7 @@ import requests
 from pithy.api import request
 from pithy import make_session
 from Utils import cks1, calc_md5
-from apis.env_url import Djh_url_pro  # from .env_url import Djh_url_pro  也可以
+from apis.env_url import Djh_url_pro  # 使用绝对路径导入
 # from requests import Session
 
 

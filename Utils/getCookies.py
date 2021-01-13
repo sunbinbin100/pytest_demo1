@@ -23,6 +23,10 @@ def cks1():
     return cks
 
 
+if __name__ == '__main__':
+    print(cks1())
+
+
 
 
 

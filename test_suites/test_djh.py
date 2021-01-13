@@ -3,7 +3,7 @@
 
 import pytest
 import allure
-from apis.djh_login_api import DJHLogin
+from apis import DJHLogin  # from apis.djh_login_api import DJHLogin  # 使用绝对路径导入
 from Utils import calc_md5
 
 
@@ -48,6 +48,7 @@ class TestDJHLogin(object):
 
 # if __name__ == '__main__':
 #     pytest.main(['test_djh.py'])
+
 
 
 

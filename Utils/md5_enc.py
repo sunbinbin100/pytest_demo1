@@ -13,12 +13,9 @@ def calc_md5(pw):
     md.update(str(pw).encode('utf-8'))
     return md.hexdigest()                            # 返回16进制密文
 
-# print(calc_md5(123456))
 
-
-
-
-
+# if __name__ == '__main__':
+#     print(calc_md5(123456))
 
 
 

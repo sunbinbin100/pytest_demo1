@@ -3,7 +3,7 @@
 
 import pytest
 from pithy import Config
-from apis import DeviceInfoChange
+from apis import DeviceInfoChange  # from apis.device_info_change_api import DeviceInfoChange    # 使用绝对路径导入
 from pithy import pretty_print
 
 
