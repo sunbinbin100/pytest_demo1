@@ -1,9 +1,10 @@
 #!/usr/bin/python
 # coding=utf-8
 
+import os
 import pytest
 import allure
-from apis import DJHLogin  # from apis.djh_login_api import DJHLogin  # 使用绝对路径导入
+from apis import DJHLogin     # from apis.djh_login_api import DJHLogin  # 使用绝对路径导入
 from Utils import calc_md5
 
 
