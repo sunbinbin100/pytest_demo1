@@ -23,7 +23,7 @@
 
 
 * pithy调用requests更加简洁，在调用时还能够打印出输入和输出的参数，方便调试
-* 参考链接：(基于 python 的接口自动化测试)(https://mp.weixin.qq.com/s?__biz=MzIwNjEwNTQ4Mw%3D%3D&mid=2651577106&idx=1&sn=4c3e7f3a3090fea19ef48d24cdb5211f)
+* 参考链接：[基于 python 的接口自动化测试](https://mp.weixin.qq.com/s?__biz=MzIwNjEwNTQ4Mw%3D%3D&mid=2651577106&idx=1&sn=4c3e7f3a3090fea19ef48d24cdb5211f)
 * thriftpy文件有缺失，需要用的话需要去找一下
 
 
