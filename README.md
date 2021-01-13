@@ -1,4 +1,4 @@
-    ├─pytest_demo1
+    .pytest_demo1
     ├── apis
     ├── rpt
     │   ├── html111
@@ -21,13 +21,11 @@
     ├── README.MD
     └── requirements.txt
 
-
-* pithy调用requests更加简洁，在调用时还能够打印出输入和输出的参数，方便调试
 * 参考链接：[基于 python 的接口自动化测试](https://mp.weixin.qq.com/s?__biz=MzIwNjEwNTQ4Mw%3D%3D&mid=2651577106&idx=1&sn=4c3e7f3a3090fea19ef48d24cdb5211f)<br>
-        [pithy-test的github](https://github.com/yuyu1987/pithy-test)<br>
-        [pithy-test用户手册](https://pithy-test.readthedocs.io/en/latest/index.html)
+&emsp;&emsp;&emsp;&emsp;&emsp;[pithy-test的github](https://github.com/yuyu1987/pithy-test)<br>
+&emsp;&emsp;&emsp;&emsp;&emsp;[pithy-test用户手册](https://pithy-test.readthedocs.io/en/latest/index.html)
+* pithy调用requests更加简洁，在调用时还能够打印出输入和输出的参数，方便调试
 * thriftpy文件有缺失，需要用的话需要去找一下
-
 
 * cfg.yaml —— appid的配置信息
 * cfg_db.yaml —— 数据库连接信息
