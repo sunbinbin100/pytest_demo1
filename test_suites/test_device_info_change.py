@@ -21,7 +21,7 @@ class TestDeviceInfoChange(object):
         self.DeviceInfoChange = DeviceInfoChange()
         self.base_url = ProDeviceConfig.pro_kdd_url
 
-    @pytest.mark.skip                  # pytest-ordering插件
+    @pytest.mark.skip                  # pytest.mark.run(order=1)  需安装pytest-ordering插件
     def test_get_pro_token(self):
         """
         获取线上配置后台登录时的token
@@ -42,7 +42,7 @@ class TestDeviceInfoChange(object):
         resp = self.DeviceInfoChange.device_info_clear(token).to_json()
         assert resp.message == u'成功'
 
-    @pytest.mark.run
+    @pytest.mark.flaky(reruns=2, reruns_delay=1)              # 失败则延迟1s后重跑，最多一共跑2次
     def test_device_info_get(self):
         """
         线上清除设备信息后，查看设备信息
@@ -51,6 +51,7 @@ class TestDeviceInfoChange(object):
         # resp = self.DeviceInfoChange.device_info_get(token).to_json()
         # assert resp['message'] == u'成功'
         print(self.base_url)
+        assert 1 == 2
         # print(sys.path)  # 本文件的搜索模块的路径集。列表中第一个元素不是本文件的所在目录，是当前项目的根目录
 
 
