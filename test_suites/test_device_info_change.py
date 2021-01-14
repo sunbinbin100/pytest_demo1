@@ -50,9 +50,9 @@ class TestDeviceInfoChange(object):
         # token = self.test_get_pro_token()
         # resp = self.DeviceInfoChange.device_info_get(token).to_json()
         # assert resp['message'] == u'成功'
-        print(self.base_url)
-        assert 100 == 200
+        print('self.base_url为：' + self.base_url)
         # print(sys.path)  # 本文件的搜索模块的路径集。列表中第一个元素不是本文件的所在目录，是当前项目的根目录
+
 
 
 
