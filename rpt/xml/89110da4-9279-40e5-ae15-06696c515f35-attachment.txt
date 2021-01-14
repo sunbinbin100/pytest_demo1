@@ -31,7 +31,7 @@ post
     "info": {
         "avatar": "/static/upload/member/0/f/0bff087ff1fcc8b3b8e3fa6dd73e43f6.png?_=1494990706",
         "nickname": "帆布",
-        "token": "OWE4MjBlK1VWcWh3eCtSTXYxTTNhNkZidHU2OE5GMUdYY20wKzR5Tnl3",
+        "token": "ZDAyNm1aNFB0cFBkTWs4b3hvRlZ0a2RLY0FGYkVVR1ljYStTaW5Xdnl3",
         "uid": "28",
         "username": "15221466224"
     },

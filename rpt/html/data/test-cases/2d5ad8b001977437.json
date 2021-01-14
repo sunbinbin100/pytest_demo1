@@ -1,12 +1,12 @@
 {
-  "uid" : "135908773ef7d5d6",
+  "uid" : "2d5ad8b001977437",
   "name" : "test_djh_personal_center",
   "fullName" : "test_suites.test_djh.TestDJHLogin#test_djh_personal_center",
   "historyId" : "0df165faee0bc312a0afa8f01b286bb6",
   "time" : {
-    "start" : 1610639740876,
-    "stop" : 1610639741216,
-    "duration" : 340
+    "start" : 1610642463732,
+    "stop" : 1610642463937,
+    "duration" : 205
   },
   "description" : "\n        测试电竞虎个人中心接口(get)\n        ",
   "descriptionHtml" : "<pre><code>    测试电竞虎个人中心接口(get)\n</code></pre>\n",
@@ -19,15 +19,15 @@
     "status" : "passed",
     "steps" : [ ],
     "attachments" : [ {
-      "uid" : "25b4476a56be1470",
+      "uid" : "464f67552b0850bc",
       "name" : "text文本",
-      "source" : "25b4476a56be1470.txt",
+      "source" : "464f67552b0850bc.txt",
       "type" : "text/plain",
       "size" : 35
     }, {
-      "uid" : "781f34515cece71",
+      "uid" : "b68ee944015cfdef",
       "name" : "stdout",
-      "source" : "781f34515cece71.txt",
+      "source" : "b68ee944015cfdef.txt",
       "type" : "text/plain",
       "size" : 1344
     } ],
@@ -40,10 +40,10 @@
   "afterStages" : [ ],
   "labels" : [ {
     "name" : "tag",
-    "value" : "timeout(60)"
+    "value" : "run"
   }, {
     "name" : "tag",
-    "value" : "run"
+    "value" : "timeout(60)"
   }, {
     "name" : "parentSuite",
     "value" : "test_suites"
@@ -58,7 +58,7 @@
     "value" : "sunbinbindembp"
   }, {
     "name" : "thread",
-    "value" : "75379-MainThread"
+    "value" : "99811-MainThread"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -82,6 +82,6 @@
     "categories" : [ ],
     "tags" : [ "timeout(60)", "run" ]
   },
-  "source" : "135908773ef7d5d6.json",
+  "source" : "2d5ad8b001977437.json",
   "parameterValues" : [ ]
 }

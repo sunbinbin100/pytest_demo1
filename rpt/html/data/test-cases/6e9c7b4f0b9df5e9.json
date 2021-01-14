@@ -1,12 +1,12 @@
 {
-  "uid" : "4c0492d9b47de9a4",
+  "uid" : "6e9c7b4f0b9df5e9",
   "name" : "test_djh_login[userinfo0]",
   "fullName" : "test_suites.test_djh.TestDJHLogin#test_djh_login",
   "historyId" : "976e335a98a4d3112c0509f6159eda10",
   "time" : {
-    "start" : 1610639740552,
-    "stop" : 1610639740873,
-    "duration" : 321
+    "start" : 1610642463537,
+    "stop" : 1610642463729,
+    "duration" : 192
   },
   "description" : "\n        测试电竞虎登录接口(post)\n        ",
   "descriptionHtml" : "<pre><code>    测试电竞虎登录接口(post)\n</code></pre>\n",
@@ -19,21 +19,21 @@
     "status" : "passed",
     "steps" : [ ],
     "attachments" : [ {
-      "uid" : "85af1e1bc574847c",
+      "uid" : "fef632caaf9b04c7",
       "name" : "html测试块，名称可省略",
-      "source" : "85af1e1bc574847c.html",
+      "source" : "fef632caaf9b04c7.html",
       "type" : "text/html",
       "size" : 48
     }, {
-      "uid" : "d505dea719ebc740",
+      "uid" : "fabf2adaa310dc9a",
       "name" : "日结图片",
-      "source" : "d505dea719ebc740.jpg",
+      "source" : "fabf2adaa310dc9a.jpg",
       "type" : "image/jpg",
       "size" : 39426
     }, {
-      "uid" : "40ec489371c9d43a",
+      "uid" : "1b3dcc5a01cc4807",
       "name" : "stdout",
-      "source" : "40ec489371c9d43a.txt",
+      "source" : "1b3dcc5a01cc4807.txt",
       "type" : "text/plain",
       "size" : 844
     } ],
@@ -61,7 +61,7 @@
     "value" : "sunbinbindembp"
   }, {
     "name" : "thread",
-    "value" : "75379-MainThread"
+    "value" : "99811-MainThread"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -88,6 +88,6 @@
     "categories" : [ ],
     "tags" : [ "run" ]
   },
-  "source" : "4c0492d9b47de9a4.json",
+  "source" : "6e9c7b4f0b9df5e9.json",
   "parameterValues" : [ "(15221466224, 123456)" ]
 }

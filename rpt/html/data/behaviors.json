@@ -3,26 +3,26 @@
   "name" : "behaviors",
   "children" : [ {
     "name" : "test_djh_login[userinfo0]",
-    "uid" : "4c0492d9b47de9a4",
+    "uid" : "6e9c7b4f0b9df5e9",
     "parentUid" : "b1a8273437954620fa374b796ffaacdd",
     "status" : "passed",
     "time" : {
-      "start" : 1610639740552,
-      "stop" : 1610639740873,
-      "duration" : 321
+      "start" : 1610642463537,
+      "stop" : 1610642463729,
+      "duration" : 192
     },
     "flaky" : false,
     "newFailed" : false,
     "parameters" : [ "(15221466224, 123456)" ]
   }, {
     "name" : "test_djh_personal_center",
-    "uid" : "135908773ef7d5d6",
+    "uid" : "2d5ad8b001977437",
     "parentUid" : "b1a8273437954620fa374b796ffaacdd",
     "status" : "passed",
     "time" : {
-      "start" : 1610639740876,
-      "stop" : 1610639741216,
-      "duration" : 340
+      "start" : 1610642463732,
+      "stop" : 1610642463937,
+      "duration" : 205
     },
     "flaky" : false,
     "newFailed" : false,
