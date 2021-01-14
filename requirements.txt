@@ -17,8 +17,8 @@ xlwt
 
 
 # 生成报告命令：
-# pytest -v test_suites --alluredir rpt/xml     (或 test_suites/test_djh.py，也可不指定目录或文件 运行所有用例)
-# allure generate --clean rpt/xml -o rpt/html
+# pytest -v test_suites --alluredir rpt/xml --clean-alluredir    (或 test_suites/test_djh.py，也可不指定目录或文件 运行所有用例)
+# allure generate rpt/xml -o rpt/html --clean
 
 # pytest自带的报告：
 # pytest --html=report.html --self-contained-html

@@ -9,26 +9,26 @@
         "name" : "TestDJHLogin",
         "children" : [ {
           "name" : "test_djh_login[userinfo0]",
-          "uid" : "ef54c04573e0baa4",
+          "uid" : "4c0492d9b47de9a4",
           "parentUid" : "9822139ec9e04bb6c83c13e12142d14b",
           "status" : "passed",
           "time" : {
-            "start" : 1610621467197,
-            "stop" : 1610621467631,
-            "duration" : 434
+            "start" : 1610639740552,
+            "stop" : 1610639740873,
+            "duration" : 321
           },
           "flaky" : false,
           "newFailed" : false,
           "parameters" : [ "(15221466224, 123456)" ]
         }, {
           "name" : "test_djh_personal_center",
-          "uid" : "4cd5f5e422bbd32c",
+          "uid" : "135908773ef7d5d6",
           "parentUid" : "9822139ec9e04bb6c83c13e12142d14b",
           "status" : "passed",
           "time" : {
-            "start" : 1610621467634,
-            "stop" : 1610621467988,
-            "duration" : 354
+            "start" : 1610639740876,
+            "stop" : 1610639741216,
+            "duration" : 340
           },
           "flaky" : false,
           "newFailed" : false,

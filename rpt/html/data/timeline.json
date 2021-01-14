@@ -4,35 +4,35 @@
   "children" : [ {
     "name" : "sunbinbindembp",
     "children" : [ {
-      "name" : "14428-MainThread",
+      "name" : "75379-MainThread",
       "children" : [ {
         "name" : "test_djh_personal_center",
-        "uid" : "4cd5f5e422bbd32c",
-        "parentUid" : "09a1b921b713f19751ab0618ff388023",
+        "uid" : "135908773ef7d5d6",
+        "parentUid" : "940e91e75735364dd7f37622ef6e28eb",
         "status" : "passed",
         "time" : {
-          "start" : 1610621467634,
-          "stop" : 1610621467988,
-          "duration" : 354
+          "start" : 1610639740876,
+          "stop" : 1610639741216,
+          "duration" : 340
         },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ ]
       }, {
         "name" : "test_djh_login[userinfo0]",
-        "uid" : "ef54c04573e0baa4",
-        "parentUid" : "09a1b921b713f19751ab0618ff388023",
+        "uid" : "4c0492d9b47de9a4",
+        "parentUid" : "940e91e75735364dd7f37622ef6e28eb",
         "status" : "passed",
         "time" : {
-          "start" : 1610621467197,
-          "stop" : 1610621467631,
-          "duration" : 434
+          "start" : 1610639740552,
+          "stop" : 1610639740873,
+          "duration" : 321
         },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ "(15221466224, 123456)" ]
       } ],
-      "uid" : "09a1b921b713f19751ab0618ff388023"
+      "uid" : "940e91e75735364dd7f37622ef6e28eb"
     } ],
     "uid" : "0ce163d5e831049164a7326fcb9ebf03"
   } ]

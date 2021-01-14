@@ -1,12 +1,12 @@
 {
-  "uid" : "ef54c04573e0baa4",
+  "uid" : "4c0492d9b47de9a4",
   "name" : "test_djh_login[userinfo0]",
   "fullName" : "test_suites.test_djh.TestDJHLogin#test_djh_login",
   "historyId" : "976e335a98a4d3112c0509f6159eda10",
   "time" : {
-    "start" : 1610621467197,
-    "stop" : 1610621467631,
-    "duration" : 434
+    "start" : 1610639740552,
+    "stop" : 1610639740873,
+    "duration" : 321
   },
   "description" : "\n        测试电竞虎登录接口(post)\n        ",
   "descriptionHtml" : "<pre><code>    测试电竞虎登录接口(post)\n</code></pre>\n",
@@ -19,21 +19,27 @@
     "status" : "passed",
     "steps" : [ ],
     "attachments" : [ {
-      "uid" : "6e8225bb645a16c1",
+      "uid" : "85af1e1bc574847c",
       "name" : "html测试块，名称可省略",
-      "source" : "6e8225bb645a16c1.html",
+      "source" : "85af1e1bc574847c.html",
       "type" : "text/html",
       "size" : 48
     }, {
-      "uid" : "8b162513ec9dd922",
+      "uid" : "d505dea719ebc740",
       "name" : "日结图片",
-      "source" : "8b162513ec9dd922.jpg",
+      "source" : "d505dea719ebc740.jpg",
       "type" : "image/jpg",
       "size" : 39426
+    }, {
+      "uid" : "40ec489371c9d43a",
+      "name" : "stdout",
+      "source" : "40ec489371c9d43a.txt",
+      "type" : "text/plain",
+      "size" : 844
     } ],
     "parameters" : [ ],
     "stepsCount" : 0,
-    "attachmentsCount" : 2,
+    "attachmentsCount" : 3,
     "shouldDisplayMessage" : false,
     "hasContent" : true
   },
@@ -55,7 +61,7 @@
     "value" : "sunbinbindembp"
   }, {
     "name" : "thread",
-    "value" : "14428-MainThread"
+    "value" : "75379-MainThread"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -82,6 +88,6 @@
     "categories" : [ ],
     "tags" : [ "run" ]
   },
-  "source" : "ef54c04573e0baa4.json",
+  "source" : "4c0492d9b47de9a4.json",
   "parameterValues" : [ "(15221466224, 123456)" ]
 }
