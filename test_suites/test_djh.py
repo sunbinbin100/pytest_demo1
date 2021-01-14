@@ -21,7 +21,7 @@ class TestDJHLogin(object):
 
     # @pytest.mark.parametrize("x", [1, 2, 3])           # 参数组合
     @pytest.mark.parametrize("userinfo", user_info)      # 参数化
-    @pytest.mark.run
+    @pytest.mark.skip
     def test_djh_login(self, userinfo):
         """
         测试电竞虎登录接口(post)
