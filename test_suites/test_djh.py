@@ -4,8 +4,10 @@
 import os
 import pytest
 import allure
+from pithy import Config
 from apis import DJHLogin     # from apis.djh_login_api import DJHLogin  # 使用绝对路径导入
 from Utils import calc_md5
+from pithy import pretty_print
 
 
 class TestDJHLogin(object):
@@ -43,14 +45,11 @@ class TestDJHLogin(object):
         assert resp.status == 200
         assert resp('$.info.user_info.email') == '1***@qq.com'
         assert resp.info.user_info.username == '152****6224'
-
         allure.attach('allure.attach测试文本text222222', name='text文本', attachment_type=allure.attachment_type.TEXT)
 
 
-# if __name__ == '__main__':
-#     pytest.main(['test_djh.py'])
-
-
+if __name__ == '__main__':
+    pytest.main(['test_djh.py'])
 
 
 

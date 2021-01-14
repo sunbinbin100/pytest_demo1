@@ -1,7 +1,0 @@
-"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Tue Jan 12 23:57:42 CST 2021","Tue Jan 12 23:57:42 CST 2021","275","test_suites","test_djh","TestDJHLogin","","","test_djh_login[userinfo0]","
-        测试电竞虎登录接口(post)
-        "
-"passed","Tue Jan 12 23:57:42 CST 2021","Tue Jan 12 23:57:42 CST 2021","312","test_suites","test_djh","TestDJHLogin","","","test_djh_personal_center","
-        测试电竞虎个人中心接口(get)
-        "

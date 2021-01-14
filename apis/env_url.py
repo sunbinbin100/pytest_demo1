@@ -27,8 +27,8 @@ class ProPZHTConfig:
     pro_kdd_url = "http://kanduoduo.qutoutiao.net/admin/user/login"
 
 
-class test_kdd:
-    KDD_DB = "mysql://rddz:re.dz@2019@10.0.1.237/kanduoduo?charset=utf8"
+class Kdd_db:
+    kdd_db_url = "mysql://rddz:re.dz@2019@10.0.1.237/kanduoduo?charset=utf8"
 
 
 class Djh_url_pro:
