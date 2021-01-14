@@ -19,9 +19,9 @@ class TestDJHLogin(object):
         """
         self.DJHLogin = DJHLogin()
 
-    @pytest.mark.run
     # @pytest.mark.parametrize("x", [1, 2, 3])           # 参数组合
     @pytest.mark.parametrize("userinfo", user_info)      # 参数化
+    @pytest.mark.run
     def test_djh_login(self, userinfo):
         """
         测试电竞虎登录接口(post)
@@ -35,7 +35,8 @@ class TestDJHLogin(object):
         allure.attach('<body>allure.attach测试文本text111111</body>', name='html测试块，名称可省略', attachment_type=allure.attachment_type.HTML)
         allure.attach.file('/Users/sunbinbin/Desktop/测试用文件/日结.png', name='日结图片', attachment_type=allure.attachment_type.JPG)           # .file
 
-    @pytest.mark.run                                        # skip跳过执行
+    @pytest.mark.run
+    @pytest.mark.timeout(60)                             # 限定60s超时
     def test_djh_personal_center(self):
         """
         测试电竞虎个人中心接口(get)
