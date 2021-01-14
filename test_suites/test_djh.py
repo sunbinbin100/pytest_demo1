@@ -35,7 +35,7 @@ class TestDJHLogin(object):
         allure.attach('<body>allure.attach测试文本text111111</body>', name='html测试块，名称可省略', attachment_type=allure.attachment_type.HTML)
         allure.attach.file('/Users/sunbinbin/Desktop/测试用文件/日结.png', name='日结图片', attachment_type=allure.attachment_type.JPG)           # .file
 
-    @pytest.mark.run
+    @pytest.mark.skip
     @pytest.mark.timeout(60)                             # 限定60s超时
     def test_djh_personal_center(self):
         """
@@ -49,9 +49,8 @@ class TestDJHLogin(object):
         allure.attach('allure.attach测试文本text222222', name='text文本', attachment_type=allure.attachment_type.TEXT)
 
 
-if __name__ == '__main__':
-    pytest.main(['test_djh.py'])
-
+# if __name__ == '__main__':
+#     pytest.main(['test_djh.py'])
 
 
 
