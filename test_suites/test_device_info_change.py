@@ -51,8 +51,8 @@ class TestDeviceInfoChange(object):
         # resp = self.DeviceInfoChange.device_info_get(token).to_json()
         # assert resp['message'] == u'成功'
         print(self.base_url)
-        assert 1 == 2
         # print(sys.path)  # 本文件的搜索模块的路径集。列表中第一个元素不是本文件的所在目录，是当前项目的根目录
+
 
 
 
