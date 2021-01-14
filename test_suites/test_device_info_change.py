@@ -42,7 +42,7 @@ class TestDeviceInfoChange(object):
         resp = self.DeviceInfoChange.device_info_clear(token).to_json()
         assert resp.message == u'成功'
 
-    @pytest.mark.flaky(reruns=2, reruns_delay=1)              # 失败则延迟1s后重跑，最多一共跑2次
+    @pytest.mark.flaky(reruns=2, reruns_delay=1)              # 失败则延迟1s后重跑，一共跑2次
     def test_device_info_get(self):
         """
         线上清除设备信息后，查看设备信息

@@ -42,7 +42,7 @@ class TestDJHLogin(object):
         测试电竞虎个人中心接口(get)
         """
         resp = self.DJHLogin.djh_personal_center('home', 'memberNew', 'center').json
-        assert resp['notice'] == '获取成功1'
+        assert resp['notice'] == '获取成功'
         assert resp.status == 200
         assert resp('$.info.user_info.email') == '1***@qq.com'
         assert resp.info.user_info.username == '152****6224'
