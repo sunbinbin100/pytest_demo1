@@ -1,0 +1,93 @@
+{
+  "uid" : "f58bd7dc1815c5d0",
+  "name" : "test_djh_login[userinfo0]",
+  "fullName" : "test_suites.test_djh.TestDJHLogin#test_djh_login",
+  "historyId" : "976e335a98a4d3112c0509f6159eda10",
+  "time" : {
+    "start" : 1610467062141,
+    "stop" : 1610467062416,
+    "duration" : 275
+  },
+  "description" : "\n        测试电竞虎登录接口(post)\n        ",
+  "descriptionHtml" : "<pre><code>    测试电竞虎登录接口(post)\n</code></pre>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "description" : "\n        测试电竞虎登录接口(post)\n        ",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "6d94f07a0871664b",
+      "name" : "html测试块，名称可省略",
+      "source" : "6d94f07a0871664b.html",
+      "type" : "text/html",
+      "size" : 48
+    }, {
+      "uid" : "a7de9b72c781fd8d",
+      "name" : "日结图片",
+      "source" : "a7de9b72c781fd8d.jpg",
+      "type" : "image/jpg",
+      "size" : 39426
+    }, {
+      "uid" : "fe69d97a7b0bbae5",
+      "name" : "stdout",
+      "source" : "fe69d97a7b0bbae5.txt",
+      "type" : "text/plain",
+      "size" : 844
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 3,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "run12"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_suites"
+  }, {
+    "name" : "suite",
+    "value" : "test_djh"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestDJHLogin"
+  }, {
+    "name" : "host",
+    "value" : "sunbinbindembp"
+  }, {
+    "name" : "thread",
+    "value" : "29862-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_suites.test_djh"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "userinfo",
+    "value" : "(15221466224, 123456)"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "run12" ]
+  },
+  "source" : "f58bd7dc1815c5d0.json",
+  "parameterValues" : [ "(15221466224, 123456)" ]
+}
