@@ -19,6 +19,7 @@ class TestDJHLogin(object):
         """
         self.DJHLogin = DJHLogin()
 
+    # @Title('电竞虎登录接口')                             # Allure功能，报告的case显示标题
     # @pytest.mark.parametrize("x", [1, 2, 3])           # 参数组合
     @pytest.mark.parametrize("userinfo", user_info)      # 参数化
     @pytest.mark.run
@@ -51,7 +52,6 @@ class TestDJHLogin(object):
 
 # if __name__ == '__main__':
 #     pytest.main(['test_djh.py'])
-
 
 
 
