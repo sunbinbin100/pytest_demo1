@@ -34,6 +34,3 @@ class Kdd_db:
 class Djh_url_pro:
     login_url = 'https://www.dianjinghu.com/web.php?m=home&c=login&a=log'
     p_c_url = 'https://www.dianjinghu.com/web.php'
-
-
-
