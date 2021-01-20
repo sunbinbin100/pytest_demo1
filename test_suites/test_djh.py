@@ -51,7 +51,12 @@ class TestDJHLogin(object):
 
 
 # if __name__ == '__main__':
-#     pytest.main(['test_djh.py'])
+#     pytest.main(['test_djh.py', '-v', '--alluredir', 'rpt1/xml', '--clean-alluredir'])
+#     # allure generate rpt1/xml -o rpt1/html --clean
+#     pytest.main('allure open -h 127.0.0.1 -p 8883 rpt1/html')
+
+
+
 
 
 
