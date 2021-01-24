@@ -59,6 +59,6 @@ class TestDJHLogin(object):
 
 
 
-
-
+# git reset HEAD <file>（git add . 了）
+# git reset --hard commit_id（git commit -m 'xxx' 了）
 
