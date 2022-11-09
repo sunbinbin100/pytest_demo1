@@ -4,36 +4,51 @@
 import os
 
 
-class ProDeviceConfig:
+class TestPeafowlConfig:
     """
-    线上环境kddurl
+    医美测试环境path
     """
-    # url="http://test1-api-kdd.qttcs3.cn"
-    pro_kdd_url = 'http://kanduoduo.redianduanzi.com'
-    # url='127.0.0.1:2051/small_video'
+    test_peafowl_url = 'https://api.test.shantaijk.cn/api/peafowl'
+    test_angelica_url = 'https://api.test.shantaijk.cn/api/angelica'
 
 
-class PreDeviceConfig:
+class PrePeafowlConfig:
     """
-    预发布环境kddurl
+    医美预发环境xx地址
     """
-    pre_kdd_url = 'http://pre-kanduoduo.redianduanzi.com'
+    pre_peafowl_url = 'https://api.pre.shantaijk.cn/'
 
 
-class ProPZHTConfig:
+class ProPeafowlConfig:
     """
-    线上配置后台登录接口
+    医美线上环境xx地址
     """
-    pro_kdd_url = "http://kanduoduo.qutoutiao.net/admin/user/login"
+    pro_peafowl_url = 'https://api.shantaijk.cn/'
 
 
-class Kdd_db:
+class Stjk_db:
+    """
+    杉泰测试环境数据库链接
+    """
+    stjk_db_url = "mysql://test_group:Shantai@test@mysql-test-in.shantaijk.cn?charset=utf8"
     kdd_db_url = "mysql://rddz:re.dz@2019@10.0.1.237/kanduoduo?charset=utf8"
+
+
+# class ProPZHTConfig:
+#     """
+#     线上配置后台登录接口
+#     """
+#     pro_kdd_url = "http://kanduoduo.qutoutiao.net/admin/user/login"
 
 
 class Djh_url_pro:
     login_url = 'https://www.dianjinghu.com/web.php?m=home&c=login&a=log'
     p_c_url = 'https://www.dianjinghu.com/web.php'
+
+
+
+
+
 
 
 

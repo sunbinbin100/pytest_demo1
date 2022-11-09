@@ -14,8 +14,13 @@ def calc_md5(pw):
     return md.hexdigest()                            # 返回16进制密文
 
 
+def get_md5(pw):
+    return hashlib.md5(str(pw).encode("UTF-8")).hexdigest() if pw is not None else None
+
+
 # if __name__ == '__main__':
-#     print(calc_md5(123456))
+#     print(get_md5(123456))
+
 
 
 

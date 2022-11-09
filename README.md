@@ -28,7 +28,7 @@
 * thriftpy文件有缺失，需要用的话需要去找一下
 <br><br/>
 * cfg.yaml —— appid的配置信息
-* cfg_db.yaml —— 数据库连接信息
-* env_url —— 接口url信息
+* cfg_db.yaml —— 数据库链接 和 Nacos链接相关信息
+* env_url —— 各环境接口url信息
 * env.cfg —— 环境配置，用于切换环境
 * config.py —— 配置驱动脚本（暂未添加）

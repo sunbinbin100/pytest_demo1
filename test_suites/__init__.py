@@ -1,16 +1,18 @@
 #!/usr/bin/python
 # coding=utf-8
 
-"""----------使用---------"""
+
+"""----------pithy使用说明（部分）---------"""
 
 # 解析json字符,输出为字典    response = post('test').to_json()
 # 解析json字符,输出为字典    response = post('test').json
 # 输出为字符串              response = post('test').to_content()
 # 输出为字符串              response = post('test').content
 # 输出cookie对象            response = post('test').get_cookie()(或已废弃)
-# 输出cookie对象            response = post('test').cookies                RequestsCookieJar，取值方法和dict一样
+# 输出cookie对象            response = post('test').cookies       （结果为RequestsCookieJar，取值方法和dict一样）
 
 # 结果取值, 假设response = {'a': 1, 'b': { 'c': [1, 2, 3, 4]}}
+# print(response['b']['c'])          # 和字典一样取值
 # print(response.b.c)                # 通过点号取值，结果为[1, 2, 3, 4]
 # print(response('$.a'))             # 通过object path取值，结果为1
 # for i in response('$..c[@>3]'):    # 通过object path取值，结果为选中 以c为key的字典 里大于3的所有元素
@@ -22,13 +24,24 @@
 # thriftpy文件有缺失，需要用的话需要去找一下
 
 # cfg.yaml     ---  appid的配置信息
-# cfg_db.yaml  ---  数据库连接信息
-# env_url      ---  接口url信息
+# cfg_db.yaml  ---  数据库链接 和 Nacos链接相关信息
+# env_url      ---  各环境接口url信息
 # env.cfg      ---  环境配置，用于切换环境
-# config.py    ---  配置驱动脚本
+# config.py    ---  配置驱动脚本（暂未添加）
 
 # run4jenkins.py —— 供Jenkins执行时调用，能够并发执行测试用例，并且有失败重试机制
 """
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,21 +1,22 @@
 #!/usr/bin/python
 # coding=utf-8
+# author:sun
 
 import json
 import requests
 from pithy.api import request
 from pithy import make_session
-from Utils import cks1, calc_md5
 from apis.env_url import Djh_url_pro  # 使用绝对路径导入
+from Utils import cookies1, calc_md5  # 顺序在apis包后
 # from requests import Session
 
 
 class DJHLogin(object):
-    # url1 = '111'  # 装饰器可引用
+    url1 = '111'  # 装饰器可引用
 
     def __init__(self):
-        self.session = make_session()            # pithy中返回的 requests库中的 Session()，使用  requests中的 Session()也是一样的
-        # self.url2 = ''  # 装饰器不可引用
+        self.session = make_session()     # pithy中返回的 python-requests库 中的 Session()，使用 requests库 中的 Session()也是一样的
+        self.url2 = 'hahaha'              # 装饰器不可引用
 
     @request(url=Djh_url_pro.login_url, method='post', verify=False)  # 忽略对 SSL 证书的验证
     def djh_login(self, mobile, password, remember_login=1, type=1):
@@ -24,10 +25,10 @@ class DJHLogin(object):
         """
         md5_pw = calc_md5(password)
         payload = {"mobile": mobile, "password": md5_pw, 'remember_login': remember_login, 'type': type}
-        return dict(data=payload)
+        return dict(data=payload)         # 接口入参要求的数据类型为json时，就写为：dict(json=payload)
 
-    @request(url=Djh_url_pro.p_c_url, method='get', cookies=cks1(), verify=False)  # 装饰器里可引用全局变量 或 类的局部变量，不能引用 self.url='xx' 这种的类变量
-    def djh_personal_center(self, mm, cc, aa):
+    @request(url=Djh_url_pro.p_c_url, method='get', cookies=cookies1, verify=False)  # 装饰器里可引用全局变量 或 类的局部变量，不能引用 self.url='xx' 这种的类变量
+    def djh_personal_center(self, mm, cc, aa):              # cookies1 现在是太医管家app登录后的cookie了，不是电竞虎的cookie
         """
         电竞虎个人中心接口(get)
         """
@@ -62,8 +63,7 @@ def laotie_oauth(msg, version=None, rule=None):
 
 
 # if __name__ == '__main__':
-#     print(laotie_oauth(1))
-
+#     print(DJHLogin.url1)
 
 
 

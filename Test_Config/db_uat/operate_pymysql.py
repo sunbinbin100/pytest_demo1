@@ -4,23 +4,20 @@
 import os
 import sys
 import yaml
-import pymysql
+import pymysql      # import mysql.connector
 from pithy import get_config
-# import mysql.connector
 from pithy import pretty_print
-from apis.env_url import Kdd_db
+from prettyprinter import cpprint
+from apis.env_url import Stjk_db
 
-print(Kdd_db.kdd_db_url)
+print(Stjk_db.stjk_db_url)
 
-# 获取配置管理器，使用自定义的配置文件(默认为cfg.yaml)
-confi = get_config(file_name='../cfg_db.yaml')     # 拼接'../'表示当前文件所在目录的父目录，即db_uat的父目录-Test_Config
-rddz_db_values = confi['rddz_db']
-pretty_print(rddz_db_values)
-# host_values = rddz_db_values['host']             # 其他类似
 
-# print(os.path.exists('../cfg_db.yaml'))            # 直接使得目录存在，不走当前目录或根目录下是否有该文件的拼接、判断了
-# yl = yaml.load(open('../cfg_db.yaml'), Loader=yaml.FullLoader)  # pithy里cfg.py line40 后续能以相对路径打开
-# print(yl)
+def get_db_info():
+    """使用配置管理器，获取自定义的配置文件(默认为cfg.yaml)中，连接数据库所需的数据"""
+    confi = get_config(file_name='../cfg_db.yaml')     # 拼接'../'表示当前文件所在目录的父目录，即db_uat的父目录：Test_Config
+    db_info = confi['shantaijk_db']
+    return db_info                     # dict。取值，例：host_values = db_info['host']
 
 
 def sql_execute_get_one(sql, mode="select", **db):
@@ -35,12 +32,8 @@ def sql_execute_get_one(sql, mode="select", **db):
             cursor.execute(sql)
             conn.commit()
     finally:
-        cursor.close()
-        conn.close()
-
-
-# sql1 = "select * from album limit 3"
-# print(sql_execute_get_one(sql1, **rddz_db_values))
+        cursor.close()           # 需关闭操作数据库的游标
+        conn.close()             # 最后关闭链接
 
 
 def sql_execute_get_all(sql, mode="select", **db):
@@ -49,7 +42,7 @@ def sql_execute_get_all(sql, mode="select", **db):
     try:
         if mode == "select":
             cursor.execute(sql)
-            result = cursor.fetchall()
+            result = cursor.fetchall()            # 返回一个list
             return result if result else None
         else:
             cursor.execute(sql)
@@ -59,7 +52,14 @@ def sql_execute_get_all(sql, mode="select", **db):
         conn.close()
 
 
+print(os.path.exists('../cfg_db.yaml'))        # 自定义路径，使得目录存在。不走pithy的Config类中 当前目录或根目录下是否有该文件的拼接、判断了
+yaml1 = yaml.load(open('../cfg_db.yaml'), Loader=yaml.FullLoader)  # pithy里cfg.py line41 后续能以相对路径打开
+pretty_print(yaml1)
 
+
+# if __name__ == '__main__':
+#     sql1 = "select * from efficient.qingniu_enterprise limit 3"
+#     cpprint(sql_execute_get_all(sql1, **get_db_info()))
 
 
 

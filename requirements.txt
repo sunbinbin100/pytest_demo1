@@ -4,6 +4,7 @@ records
 pithy
 pithy-test
 pytest
+prettyprinter
 requests
 pymysql
 # Mysqlclient
@@ -12,6 +13,9 @@ pytest-html
 SQLAlchemy
 xlrd
 xlwt
+PyYAML
+nacos-sdk-python
+
 # pithy --extra-index-url http://pypi.dev.elenet.me/eleme/eleme --trusted-host pypi.dev.elenet.me
 
 

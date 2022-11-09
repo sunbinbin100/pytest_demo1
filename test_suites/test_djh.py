@@ -1,5 +1,6 @@
 #!/usr/bin/python
 # coding=utf-8
+# author:sun
 
 import os
 import pytest
@@ -21,7 +22,7 @@ class TestDJHLogin(object):
 
     # @Title('电竞虎登录接口')                             # Allure功能，报告的case显示标题
     # @pytest.mark.parametrize("x", [1, 2, 3])           # 参数组合
-    @pytest.mark.parametrize("userinfo", user_info)      # 参数化
+    @pytest.mark.parametrize("userinfo", user_info)      # 参数化，参数的字符串须与接口入参一样
     @pytest.mark.run
     def test_djh_login(self, userinfo):
         """
@@ -56,9 +57,8 @@ class TestDJHLogin(object):
 #     pytest.main('allure open -h 127.0.0.1 -p 8883 rpt1/html')
 
 
-
-
-
 # git reset HEAD <file>（git add . 了）
 # git reset --hard commit_id（git commit -m 'xxx' 了）
+
+
 

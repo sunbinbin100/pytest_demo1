@@ -1,14 +1,44 @@
-# 本文件放置数据库链接信息
-BASE_URL: http://httpbin.org
-PITHY_DB: sqlite:///pithy.db
+# 本文件放置 数据库链接 和 Nacos链接相关信息
 
-rddz_db:
-    host: 10.0.1.237
-    user: rddz
-    password: re.dz@2019
+# 部分使用说明：
+# 1、为bool型时，首字母小写
+# 2、写成"- Xyzzz - Kkk"时，会转成列表
+# 3、想要转成python中的None时，写为 ~ 或 null
+# 4、强制转换数据类型，如：bool型 转成 字符串，写：!!str true，int型 转成 字符串格式，写：!!str 123
+
+# BASE_URL: http://httpbin.org
+# PITHY_DB: sqlite:///pithy.db
+
+
+# 杉泰数据库须内网才可访问，database内容可不填
+shantaijk_db:
+    # database: optional
+    host: mysql-test-in.shantaijk.cn
     port: 3306
-    database: kanduoduo
+    user: test_group
+    password: Shantai@test
     charset: utf8
+
+shantaijk_nacos:
+    server_addresses: 10.16.1.51:8848        # Nacos服务器地址，多台需要用,隔开
+    namespaceId: edas-dev-server             # 命名空间
+    group: DEFAULT_GROUP                     # 分组名称
+    clusters: DEFAULT                        # 集群名，多个集群用,分隔
+    username: nacos
+    password: st@test2022
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
