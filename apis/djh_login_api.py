@@ -6,26 +6,26 @@ import json
 import requests
 from pithy.api import request
 from pithy import make_session
-from apis.env_url import Djh_url_pro  # 使用绝对路径导入
-from Utils import cookies1, calc_md5  # 顺序在apis包后
+from apis.env_url import Djh_url_pro     # 使用绝对路径导入
+from Utils import cookies1, calc_md5     # 顺序在apis包后
 # from requests import Session
 
 
 class DJHLogin(object):
-    url1 = '111'  # 装饰器可引用
+    # url1 = '111'  # 装饰器可引用
 
     def __init__(self):
         self.session = make_session()     # pithy中返回的 python-requests库 中的 Session()，使用 requests库 中的 Session()也是一样的
-        self.url2 = 'hahaha'              # 装饰器不可引用
+        # self.url2 = 'hahaha'            # 装饰器不可引用
 
     @request(url=Djh_url_pro.login_url, method='post', verify=False)  # 忽略对 SSL 证书的验证
-    def djh_login(self, mobile, password, remember_login=1, type=1):
+    def djh_login(self, mobile, password, remember_login=1, typ=1):
         """
         电竞虎登录接口(post)
         """
         md5_pw = calc_md5(password)
-        payload = {"mobile": mobile, "password": md5_pw, 'remember_login': remember_login, 'type': type}
-        return dict(data=payload)         # 接口入参要求的数据类型为json时，就写为：dict(json=payload)
+        payload = {"mobile": mobile, "password": md5_pw, 'remember_login': remember_login, 'type': typ}
+        return dict(data=payload)  # 看情况使用 json、data or params，与requests.post()用法中的(json=payload)类似，转为仅1个key:'json'的字典
 
     @request(url=Djh_url_pro.p_c_url, method='get', cookies=cookies1, verify=False)  # 装饰器里可引用全局变量 或 类的局部变量，不能引用 self.url='xx' 这种的类变量
     def djh_personal_center(self, mm, cc, aa):              # cookies1 现在是太医管家app登录后的cookie了，不是电竞虎的cookie
@@ -36,7 +36,7 @@ class DJHLogin(object):
         return dict(params=params)
 
 
-# demo
+# demo：
 def laotie_oauth(msg, version=None, rule=None):
     """
     OAuth2协议

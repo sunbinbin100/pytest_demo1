@@ -3,67 +3,65 @@
 
 import json
 import nacos
-import yaml
+import yaml, ast
 from pithy import pretty_print
 from prettyprinter import cpprint
-from Test_Config import GetNacosConfig, get_nacos_info
+from apis import WorkerOrderDubbo
+from Test_Config.db_uat import get_db_info, sql_execute_get_one
+from Test_Config import get_nacos_info, GetNacosConfig
+from Utils import RunDubbo
+
+stNacInfo = get_nacos_info('../Test_Config/cfg_db.yaml', 'shantaijk_nacos')  # 在本文件中，查找cfg_db.yaml的相对路径
+stServerAddr, stNamespaceId = stNacInfo['server_addresses'], stNacInfo['namespaceId']
+stNacUsername, stNacPassword = stNacInfo['username'], stNacInfo['password']
+STJKNacosConfig = GetNacosConfig(stServerAddr, stNamespaceId, stNacUsername, stNacPassword)  # 类对象
+
+
+class TestWorkerOrderDubbo(object):
+
+    def setup(self):
+        """
+        初始化接口
+        """
+        self.WorkerOrderDubbo = WorkerOrderDubbo()       # 1次初始化为类对象，供各用例重复使用，避免各用例重复调用WorkerOrderDubbo()类
+        # self.RunDubbo = RunDubbo                       # 1次初始化为类变量（RunDubbo类需要有2个参数），供重复使用
+        ip_and_port = STJKNacosConfig.get_service_ip_and_port("providers:com.stjk.efficient.client.api.CallWorkOrderService")
+        self.conn = RunDubbo(ip_and_port[0], ip_and_port[1])  # 类对象
+        self.title = "\"sun-Dubbo问诊工单20\""  # 或"'xxx'"。sql语句中，查询条件的内容两边需要加单引号或双引号。第一个用例中引用时，须去除两边的引号(使操作的是同一数据)
+
+    def test_add_worker_order(self):
+        """
+        创建"电话问诊-视频转电话"工单
+        """
+        json_args = self.WorkerOrderDubbo.add_worker_order(ast.literal_eval(self.title), 1687246187000)  # 2023-06-20 15:29:47
+        resp = self.conn.invoke('com.stjk.efficient.client.api.CallWorkOrderService', 'addWorkerOrder', json_args)
+        cpprint(resp)
+        assert resp['errorCode'] == '0'
+        assert resp['errorMsg'] == '成功'
+        assert resp['success'] is True
+
+    def test_accept_worker_order(self):      # 受理上一个用例运行成功后，新建的工单
+        """
+        受理工单（为'已解决'）
+        """
+        sql_string = 'select * from efficient.kefu_worker_order where title=%s order by update_at desc' % self.title
+        # where title={} order by update_at desc'.format('\'sun-Dubbo问诊工单18\'')
+        st_db_info = get_db_info('../Test_Config/cfg_db.yaml', 'shantaijk_db')  # 相对路径
+        order_id = sql_execute_get_one(sql_string, **st_db_info)['id']      # int。mode仅为'select'时，可以不需要limit 1
+        json_args = self.WorkerOrderDubbo.accept_worker_order(order_id)
+        resp = self.conn.invoke('com.stjk.efficient.client.api.CallWorkOrderService', 'accept', json_args)
+        cpprint(resp)
+        assert resp['errorCode'] == '0'
+        assert resp['errorMsg'] == '成功'
+        assert resp['result'] and resp['success'] is True
 
 
 
 
 
 
-def addWorkerOrder():  # 创建"电话问诊-视频转电话"工单
-    args1 = {'title': 'sun-Dubbo问诊工单13', 'intro': 'i\'m工单描述', 'operator': 210000282100143, 'source': 'WENZHEN_SYSTEM',
-             'priority': 'P1', 'category': 'DIANHUAWENZHEN', 'secondaryCategory': 'VIDEOTOTEL', 'currentAssignee': '210003954440127',
-             'imageKey': 'habasm-8301c16e0b1843369e523d7d6abedeca.jpeg,habasm-265a029b571247d4b68060bcefe4b220.jpeg',
-             'mobile': '15221466109', 'contactMobile': '15221466109', 'isReturnVisit': True, 'returnVisitTime': 1667198701000}
-    result = conn.invoke('com.stjk.efficient.client.api.CallWorkOrderService', 'addWorkerOrder', json.dumps(args1))  # result=conn.do('ls')
-    cpprint(result)
-    conn.close()  # telnetlib自带的断开连接。也可以自定义一个方法：self.write(b"exit\n")
 
 
-def acceptWorkerOrder(order_id):  # 受理工单
-    args2 = {'id': order_id, 'operator': '210002043170144', 'status': 'SOLVE', 'currentAssignee': '210002043170144',
-             'intro': 'I\'m受理说明', 'imageKey': '', 'contactMobile': '', 'isReturnVisit': False,
-             'isAdmin': True}
-    result = conn.invoke('com.stjk.efficient.client.api.CallWorkOrderService', 'accept', json.dumps(args2))
-    cpprint(result)
-    conn.close()
-
-
-# addWorkerOrder()
-# acceptWorkerOrder(153032)
-# print(conn.do('ls -l'))
-
-
-
-
-
-
-
-
-
-
-
-
-# def AddWorkerOrderReq(service, interface, method, req, retcode='000000'):
-#     url = 'http://10.19.125.66:20880/' + service + '.' + interface
-#     print('URL:\t%s' % url)
-#     print('Method:\t%s' % method)
-#     print('Req:\t%s' % req)
-#     res = getattr(HessianProxy(url), method)(req)
-#     print('Res:\t%s' % json.dumps(res, ensure_ascii=False))
-#
-#
-# if __name__ == '__main__':
-#     service = 'com.stjk.efficient.client.api'  # 服务名：providers:com.stjk.efficient.client.api.CallWorkOrderService
-#     interface = 'CallWorkOrderService'  # 为service的一部分，接口：com.stjk.efficient.client.api.CallWorkOrderService
-#     method = 'addWorkerOrder'
-#     req = protocol.object_factory('com.stjk.efficient.client.req.addWorkerOrder', operator='210000282100143',
-#                                   source='WENZHEN_SYSTEM', currentAssignee=210003954440127, isReturnVisit=False)
-#     AddWorkerOrderReq(service, interface, method, req)
-# # https://www.jianshu.com/p/40968685dcd6、https://cloud.tencent.com/developer/article/1564629
 
 
 

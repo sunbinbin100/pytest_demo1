@@ -18,7 +18,7 @@ class TestDJHLogin(object):
         """
         初始化接口
         """
-        self.DJHLogin = DJHLogin()
+        self.DJHLogin = DJHLogin()                 # 1次初始化为类对象，供各用例重复使用，避免各用例重复调用DJHLogin()类
 
     # @Title('电竞虎登录接口')                             # Allure功能，报告的case显示标题
     # @pytest.mark.parametrize("x", [1, 2, 3])           # 参数组合

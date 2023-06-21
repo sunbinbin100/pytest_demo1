@@ -19,6 +19,13 @@ shantaijk_db:
     password: Shantai@test
     charset: utf8
 
+shantaijk_db1:
+    host: pc-uf62rfc93yknoeo51.rwlb.rds.aliyuncs.com
+    port: 3306
+    user: test_group
+    password: Shantai@test
+    charset: utf8
+
 shantaijk_nacos:
     server_addresses: 10.16.1.51:8848        # Nacos服务器地址，多台需要用,隔开
     namespaceId: edas-dev-server             # 命名空间

@@ -9,7 +9,7 @@ from pithy import make_session
 # from requests import Session
 from pithy.api import request
 from apis import TestPeafowlConfig
-from Utils.getTygjCookies import cookies1  # 顺序在apis包后
+from Utils import cookies1            # 顺序在apis包后
 
 
 class Peafowl(object):
@@ -23,12 +23,12 @@ class Peafowl(object):
     @request(url=TestPeafowlConfig.test_peafowl_url + "/merchant/queryMerchantList", method='post', cookies=cookies1, verify=False)
     def query_merchant_list0(self, areaCode, latitude, longitude):
         """
-        查询医美首页的推荐机构列表(post)
+        查询医美首页的推荐机构列表(post，上海)
         """
         requests.packages.urllib3.disable_warnings()   # Python requests 设置verify=False移除SSL认证时，解决InsecureRequestWarning
         payload = {"pageSize": 20, "supportType": 1, "areaCode": areaCode,
                    "latitude": latitude, "longitude": longitude, "pageNo": 1}
-        return dict(json=payload)                      # 看情况使用 json、data or params，与requests.post()用法中的(json=payload1)类似
+        return dict(json=payload)  # 看情况使用 json、data or params，与requests.post()用法中的(json=payload)类似，转为仅1个key:'json'的字典
 
     @request(url=TestPeafowlConfig.test_peafowl_url + '/goodsPackage/getAllGoodsPackage', method='post', cookies=cookies1, verify=False)
     def get_all_goods_package(self, provCode, cityCode):
@@ -51,7 +51,7 @@ class Peafowl(object):
     @request(url=TestPeafowlConfig.test_peafowl_url + '/merchant/queryMerchantGoodsPackage', method='post', cookies=cookies1, verify=False)
     def query_merchant_goods_package(self, merchantCode):
         """
-        查询机构详情页的套餐--机构支持的套餐(post)
+        查询机构详情页的套餐--机构支持的套餐(商品)(post)
         """
         requests.packages.urllib3.disable_warnings()
         payload = {"merchantCode": merchantCode, "supportType": 1}
@@ -81,16 +81,34 @@ class Peafowl(object):
         查询医美'预约列表'-'全部'tab中，第一页所有的普通权益的数据(15221466071用户的列表)
         """
         requests.packages.urllib3.disable_warnings()
-        payload = {"pageNo": pageNo, "pageSize": pageSize, 'orderStatusList': orderStatusList}
+        payload = {"pageNo": pageNo, "pageSize": pageSize, "orderStatusList": orderStatusList}
+        return dict(json=payload)
+
+    @request(url=TestPeafowlConfig.test_peafowl_url + '/appointmentManage/addAppointmentUser', method='post', cookies=cookies1, verify=False)
+    def add_appointment_user(self, name, sex, mobileNo, dateBirth, relaType):
+        """
+        添加(15221466071账号的)预约人（为防止数据越来越多，每次新增后会清理）
+        """
+        requests.packages.urllib3.disable_warnings()
+        payload = {"name": name, "sex": sex, "mobileNo": mobileNo, "dateBirth": dateBirth, "relaType": relaType}
         return dict(json=payload)
 
     @request(url=TestPeafowlConfig.test_peafowl_url + '/appointmentManage/getAppointmentUser', method='post', cookies=cookies1, verify=False)
     def get_appointment_user(self):
         """
-        查询(15221466071用户的)可预约用户
+        查询(15221466071账号的)预约人列表 数据
         """
         requests.packages.urllib3.disable_warnings()
         payload = {}
+        return dict(json=payload)
+
+    @request(url=TestPeafowlConfig.test_peafowl_url + '/appointmentManage/updateAppointmentUser', method='post', cookies=cookies1, verify=False)
+    def update_appointment_user(self, name, sex, mobileNo, dateBirth, patientId):
+        """
+        编辑(15221466071账号的)预约人：零七一自动化测试预约人（前端限制，只能更改手机号）
+        """
+        requests.packages.urllib3.disable_warnings()
+        payload = {"name": name, "sex": sex, "mobileNo": mobileNo, "dateBirth": dateBirth, "patientId": patientId}
         return dict(json=payload)
 
     @request(url=TestPeafowlConfig.test_peafowl_url + '/merchant/queryMerchantList', method='post', cookies=cookies1, verify=False)
@@ -106,7 +124,7 @@ class Peafowl(object):
     @request(url=TestPeafowlConfig.test_peafowl_url + '/mechanism/reservationDate', method='post', cookies=cookies1, verify=False)
     def get_reservation_date(self, merchantCode):
         """
-        查询'外滩医美机构1外滩xxxx'机构的预约日期
+        查询'外滩医美机构1外滩xxxx'机构的 可预约日期
         """
         requests.packages.urllib3.disable_warnings()
         payload = {'merchantCode': merchantCode}
@@ -134,7 +152,16 @@ class Peafowl(object):
     @request(url=TestPeafowlConfig.test_peafowl_url + '/reservation/getDetail', method='post', cookies=cookies1, verify=False)
     def get_detail(self, interests_id):
         """
-        查询'预约列表'-'预约中'tab中第一个权益的详情
+        查询'预约列表'-'预约中'tab中 第一个权益的预约详情
+        """
+        requests.packages.urllib3.disable_warnings()
+        payload = {"id": interests_id}
+        return dict(json=payload)
+
+    @request(url=TestPeafowlConfig.test_peafowl_url + '/reservation/getPatientInfo', method='post', cookies=cookies1, verify=False)
+    def get_patient_info(self, interests_id):
+        """
+        点击查询 '预约中'tab中 第一个权益的预约详情的 '预约人'信息
         """
         requests.packages.urllib3.disable_warnings()
         payload = {"id": interests_id}
@@ -143,7 +170,7 @@ class Peafowl(object):
     @request(url=TestPeafowlConfig.test_peafowl_url + '/reservation/cancel', method='post', cookies=cookies1, verify=False)
     def cancel_reservation_order(self, interests_id, merchantCode):
         """
-        取消预约 '预约列表'-'预约中'tab中的第一个权益（有多个'待确认'状态的权益时，先预约的权益排序更靠前）
+        取消预约 '预约中'tab中的第一个权益（有多个'待确认'状态的权益时，预约时间近的 排序更靠前）
         """
         requests.packages.urllib3.disable_warnings()
         payload = {"id": interests_id, "merchantCode": merchantCode}
