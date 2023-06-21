@@ -11,7 +11,7 @@ from pithy import pretty_print
 
 def get_nacos_info(caller_file_path, database):
     """
-    获取配置文件cfg_db.yaml中，连接Nacos所需的数据ßgit
+    获取配置文件cfg_db.yaml中，连接Nacos所需的数据
     """
     if not isinstance(caller_file_path and database, str):
         return '------2个入参必须都为string------'
