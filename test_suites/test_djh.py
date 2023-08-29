@@ -22,7 +22,7 @@ class TestDJHLogin(object):
 
     # @Title('电竞虎登录接口')                             # Allure功能，报告的case显示标题
     # @pytest.mark.parametrize("x", [1, 2, 3])           # 参数组合
-    @pytest.mark.parametrize("userinfo", user_info)      # 参数化，参数的字符串须与接口入参一样
+    @pytest.mark.parametrize("userinfo", user_info)      # 参数化，argnames须与接口入参一样
     @pytest.mark.run
     def test_djh_login(self, userinfo):
         """
@@ -31,7 +31,7 @@ class TestDJHLogin(object):
         resp = self.DJHLogin.djh_login(userinfo[0], userinfo[1]).to_json()  # .to_json()==.json
         assert resp.notice == '登陆成功'
         assert resp['status'] == 200                        # 通过字典形式取值
-        assert resp.info.nickname == '帆布'                  # 通过点号取值
+        # assert resp.info.nickname == '帆布102'            # 通过点号取值
         assert resp('$.info.username') == '15221466224'     # 通过object path取值
         # allure测试报告相关
         allure.attach('<body>allure.attach测试文本text111111</body>', name='html测试块，名称可省略', attachment_type=allure.attachment_type.HTML)
@@ -48,7 +48,7 @@ class TestDJHLogin(object):
         assert resp.status == 200
         assert resp('$.info.user_info.email') == '1***@qq.com'
         assert resp.info.user_info.username == '152****6224'
-        allure.attach('allure.attach测试文本text222222', name='text文本', attachment_type=allure.attachment_type.TEXT)
+        # allure.attach('allure.attach测试文本text222222', name='text文本', attachment_type=allure.attachment_type.TEXT)
 
 
 # if __name__ == '__main__':

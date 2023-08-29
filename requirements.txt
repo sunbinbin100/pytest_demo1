@@ -30,6 +30,5 @@ nacos-sdk-python
 # pytest --html=report.html --self-contained-html
 
 
-
-
+# pytest 常见执行参数cmd下：https://www.jianshu.com/p/d6b32fcb9b83
 
